@@ -8,7 +8,7 @@
     <button class="lap" (click)="addLap()">Lap</button>
   </div>
   <div class="lapList">
-    <div>
+    <div id="list">
       <div *ngFor="let lap of laps;let i = index">
         <div> &#9873; <b>Lap {{i+1}} ::</b> {{lap}}</div>
       </div>

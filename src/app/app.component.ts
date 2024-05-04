@@ -48,6 +48,7 @@ export class AppComponent {
     this.mm = 0;
     this.ss = 0;
     this.ms = 0;
+    this.isRunning = false
     clearInterval(this.timerId);
     this.laps = [];
   }
@@ -55,5 +56,15 @@ export class AppComponent {
   public addLap() {
     let lapTime = `${this.format(this.hh)}:${this.format(this.mm)}:${this.format(this.ss)}:${this.format(this.ms)}`
     this.laps.push(lapTime);
+    setTimeout(() => {
+      this.scroll()
+    }, 1000)
+  }
+
+  public scroll() {
+    document.getElementById('list')?.scrollTo({
+      top: (document.getElementById('list')?.scrollHeight || 0),
+      behavior: 'smooth'
+    });
   }
 }
