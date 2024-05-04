@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/stopwatch-ngrx",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+.stop-watch {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    flex-flow: column;
+    gap: 3rem;
+
+    &>div:first-child {
+        font-size: 3rem;
+    }
+
+    &>div:nth-child(2) {
+        font-size: 4rem;
+    }
+
+    &__cloud {
+        position: fixed;
+        top: -23.4375rem;
+        left: 0;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1.25rem;
+
+        button {
+            margin-left: 1rem;
+            padding: 0.625rem 1.25rem;
+            border: none;
+            border-radius: 0.3125rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .start {
+            background-color: #28a745; // Green color for Start button
+            color: white;
+        }
+
+        .stop {
+            background-color: #ffc107; // Yellow color for Resume button
+            color: black;
+        }
+
+        .reset {
+            background-color: #dc3545; // Red color for Stop button
+            color: white;
+        }
+
+        .lap {
+            background-color: #007bff; // Blue color for Lap button
+            color: white;
+        }
+    }
+
+    .lapList {
+        font-size: 1rem;
+        color: white;
+        letter-spacing: 0.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 20%;
+        right: 10%;
+
+        &>div {
+            min-height: 0rem;
+            max-height: 30rem;
+            overflow-y: auto;
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .stop-watch {
+        margin-top: 2rem;
+        justify-content: flex-start;
+        height: unset;
+
+        .lapList {
+            position: unset;
+
+            &>div {
+                min-height: 0rem;
+                max-height: 10rem;
+                overflow-y: auto;
+            }
+
+        }
+
+        &__cloud {
+            display: none;
+        }
+    }
+
+
+}
